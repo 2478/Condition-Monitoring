@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ALTRUISM LABS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="Highly configurable boxes best used for showing numbers in an user friendly way.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+   
+   .chartBox{
+        height:300px;
+       
+    }
+    /*Logo*/
+    .logo{
+        font-size:30px;
+        color:blue;
+        font-family: 'Lobster', cursive;
+    }
+    /*Timeline Chart*/
+    .stacked-bar-graph{
+        width:100%;
+        height:53px;
+    }
+    ul {
+    display: inline-block;
+    height:100%;
+    box-sizing: border-box;
+    float:left;
+    color:black;
+    font-weight: bold;
+    font-family: arial, sans-serif;
+    padding: 10px;
+
+  }
+
+  .bar-1 {
+    background:red;
+  }
+
+  .bar-2 {
+    background: orange;
+  }
+
+  .bar-3 {
+    background: yellow;
+  }
+  .bar-4{
+    background:green;
+  }
+  .bar-5{
+    background:blue;
+  }
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<link href="./main.css" rel="stylesheet"></head>
+
+<body>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <div class="app-header header-shadow">
+            <div class="app-header__logo">
+               <!-- <div class="logo">Altruism </div>-->
+                <div class="header__pane ml-auto">
+                    <div>
+                        <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="app-header__mobile-menu">
+                <div>
+                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="app-header__menu">
+                <span>
+                    <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
+            </div>    <div class="app-header__content">
+                <div class="app-header-left">
+                    <div class="search-wrapper">
+                        <div class="input-holder">
+                            <input type="text" class="search-input" placeholder="Type to search">
+                            <button class="search-icon"><span></span></button>
+                        </div>
+                        <button class="close"></button>
+                    </div>
+                    <ul class="header-menu nav">
+                        <li class="nav-item">
+                            <a href="javascript:void(0);" class="nav-link">
+                                <i class="nav-link-icon fa fa-database"> </i>
+                                Statistics
+                            </a>
+                        </li>
+                        <li class="btn-group nav-item">
+                            <a href="javascript:void(0);" class="nav-link">
+                                <i class="nav-link-icon fa fa-edit"></i>
+                                Projects
+                            </a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a href="javascript:void(0);" class="nav-link">
+                                <i class="nav-link-icon fa fa-cog"></i>
+                                Settings
+                            </a>
+                        </li>
+                    </ul>        </div>
+                <div class="app-header-right">
+                    <div class="header-btn-lg pr-0">
+                        <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="btn-group">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                            <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                        </a>
+                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                            <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+                                            <button type="button" tabindex="0" class="dropdown-item">Settings</button>
+                                            <h6 tabindex="-1" class="dropdown-header">Header</h6>
+                                            <button type="button" tabindex="0" class="dropdown-item">Actions</button>
+                                            <div tabindex="-1" class="dropdown-divider"></div>
+                                            <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content-left  ml-3 header-user-info">
+                                    <div class="widget-heading">
+                                        Alina Mclourd
+                                    </div>
+                                    <div class="widget-subheading">
+                                        VP People Manager
+                                    </div>
+                                </div>
+                                <div class="widget-content-right header-user-info ml-3">
+                                    <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                                        <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        </div>
+            </div>
+        </div>        <div class="ui-theme-settings">
+            
+            <div class="theme-settings__inner">
+                <div class="scrollbar-container">
+                   
+                </div>
+            </div>
+        </div>        <div class="app-main">
+                <div class="app-sidebar sidebar-shadow">
+                    <div class="app-header__logo">
+                        <div class="logo-src"></div>
+                        <div class="header__pane ml-auto">
+                            <div>
+                                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                                    <span class="hamburger-box">
+                                        <span class="hamburger-inner"></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-header__mobile-menu">
+                        <div>
+                            <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="app-header__menu">
+                        <span>
+                            <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                                <span class="btn-icon-wrapper">
+                                    <i class="fa fa-ellipsis-v fa-w-6"></i>
+                                </span>
+                            </button>
+                        </span>
+                    </div>    <div class="scrollbar-sidebar">
+                        <div class="app-sidebar__inner">
+                            <ul class="vertical-nav-menu">
+                                <li class="app-sidebar__heading">Dashboards</li>
+                                
+                                <li class="app-sidebar__heading">User Management</li>
+                               
+                                <li class="app-sidebar__heading">User Details</li>
+                                
+                               
+                                <li class="app-sidebar__heading">Log Out</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>    <div class="app-main__outer">
+                    <div class="app-main__inner">
+
+                                <!--Tables-->
+<div class="cont">
+  
+  <div class="row">
+    <div class="col">
+     <table class="table table-striped  table-hover table-bordered table-dark">
+  <thead>
+    <tr >
+      <th scope="col">Summary of Day</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td >Plan Time</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>Idle Time</td>
+      <td>5:18:24</td>
+    </tr>
+    <tr>
+      <td>Availibility</td>
+      <td>95.45%</td>
+    </tr>
+    <tr>
+      <td>Avg. Part change Time</td>
+      <td>60.05</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <div class="col">
+      <table class="table table-striped table-hover table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Summary of Day</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Machine Ontime</td>
+      <td>21:1:24</td>
+    </tr>
+    <tr>
+      <td>Cycle completed</td>
+      <td>167</td>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td>74.76</td>
+    </tr>
+    <tr>
+      <td>Loss Hours</td>
+      <td>3.3 hrs</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <div class="col">
+      <table class="table table-striped table-hover table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Summary of Day</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Productive Time</td>
+      <td>15:42:59</td>
+    </tr>
+    <tr>
+      <td>Target Production</td>
+      <td>223</td>
+    </tr>
+    <tr>
+      <td>OEE</td>
+      <td>71.36%</td>
+    </tr>
+    <tr>
+      <td>MHR Loss</td>
+      <td>1060 Rs</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+     <div class="col">
+      <table class="table table-striped table-hover table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Summary of Day</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <td>the Bird2</td>
+      <td>@twitter2</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+  </div>
+</div>
+                            <br/>
+                    <!--Timeline Chart-->
+                    <nav class="navbar navbar-light  card">
+                    <div class="container-fluid">
+                       
+                        <div class="stacked-bar-graph" >
+                    <ul style="width:20%" class="bar-1">20%</ul>
+                    <ul style="width:20%" class="bar-2">20%</ul>
+                    <ul style="width:20%" class="bar-3">20%</ul>
+                    <ul style="width:20%" class="bar-4">20%</ul>
+                    <ul style="width:20%" class="bar-5">20%</ul>
+                    
+                    </div>
+                       
+                    </div>
+                    </nav>
+                    <!--ses-->
+                            <br/><br/>
+                                    <div class="">
+                            <div class="row">
+                                <div class="col-lg-6 col-xl-4">
+                                    <div class="card mb-3 ">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-center">
+                                                <div class="widget-heading">
+                                               
+                                                <h5 class="card-title">Pie Chart</h5>
+                                                <canvas id="chart-area"></canvas>
+                                           
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="widget-content-right">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-4">
+                                    <div class="card mb-3 ">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-center">
+                                                <div class="widget-heading">
+                                                <h5 class="card-title">Doughnut Chart</h5>
+                                                <canvas id="doughnut-chart"></canvas>
+                                                </div>
+                                               
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-4">
+                                    <div class="card mb-3 ">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-center">
+                                                <div class="widget-heading">                                                
+                                               <h5 class="card-title">Progress Bar</h5>
+                                         <div class="mb-3 progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+                                        </div>
+                                        <div class="mb-3 progress">
+                                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                        </div>
+                                        <div class="mb-3 progress">
+                                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                                        </div>
+                                        <div class="mb-3 progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                                        </div> 
+                                    
+                                         </div>
+                                               
+                                            </div>
+                                            <div class="widget-content-right">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                              </div>
+
+                              <!--Stacked bar chart-->
+                               <!--<div class="col-lg-6 col-xl-4">-->
+                              
+                                    <div class="card mb-3 ">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-center">
+                                                <div class="widget-heading">
+                                                     <div class="chartBox">                 
+                                                        
+                                                        <canvas id="myChart" ></canvas> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!--</div>-->                    
+<script>
+var xValues = ["Red", "Orange","yellow","Green","Blue"];
+var yValues = [55, 49, 44, 38, 37];
+var barColors = ["red", "orange","yellow","green","blue"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,  
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Stacked Bar Chart"
+    }
+  }
+});
+</script>
+
+                              <!--ses-->
+        </div>
+    </div>
+
+    
+    
+<script type="text/javascript" src="./assets/scripts/main.js"></script></body>
+</html>
